@@ -38,7 +38,7 @@ param_grid = dict(max_depth = max_depth, min_samples_leaf = min_samples_leaf)
 
 GridSearch = GridSearchCV(estimator=Tree, param_grid=param_grid, cv=5, n_jobs=2, scoring='neg_mean_squared_error')
 GridResults = GridSearch.fit(xtrain,ytrain)
-("Best: %f using %s" % (GridResults.best_score_, GridResults.best_params_))
+print("Best: {} using {}".format(GridResults.best_score_, GridResults.best_params_))
 
 #http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
 Forest = RandomForestRegressor(max_depth=10, min_samples_leaf=5, n_estimators=1000)
